@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Knockout example</title>
+		<style type="text/css">
+			.cool {
+				background-color: lightblue;
+			}
+			.moderate {
+				background-color: lightgreen;
+			}
+			.hot {
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p><input type="checkbox" data-bind="checked: showText" />(Un)check me</p>
+			<p data-bind="if: showText">This is the if binding.</p>
+			<p data-bind="visible: showText">This is the visible binding.</p>
+		
+			<!-- ko if: showText -->
+				<p>This is the commented if.</p>
+			<!-- /ko -->
+		</div>
+		<div>
+			<p><input type="email" data-bind="attr: { placeholder: emailPlaceholder }" /></p>
+			<p><a data-bind="attr: { href: url, title: urlTitle, target: urlTarget }">This is a link.</a></p>
+		</div>
+		<div>
+			<p data-bind="css: { cool: temperature() <= 7, moderate: temperature() > 7 && temperature() < 20, hot: temperature() >= 20 }">Temperature: <input data-bind="value: temperature" /></p>
+		</div>
+		
+		<script src="knockout-3.3.0.js"></script>
+		<script src="OtherBindings.js"></script>
+	</body>
+</html>

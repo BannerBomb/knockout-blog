@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Knockout example</title>
+	</head>
+	<body>
+		<div>
+			<h1>My favourite albums</h1>
+			<div>
+				<h2>Read-only table</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Artist</th>
+							<th>Name</th>
+							<th>Genre</th>
+						</tr>
+					<thead>
+					<tbody data-bind="foreach: albums">
+						<tr>
+							<td data-bind="text: artist"></td>
+							<td data-bind="text: name"></td>
+							<td data-bind="text: genre"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div>
+				<h2>Editable table</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Artist</th>
+							<th>Name</th>
+							<th>Genre</th>
+							<th></th>
+						</tr>
+					<thead>
+					<tbody data-bind="foreach: albums">
+						<tr>
+							<td><input data-bind="value: artist" /></td>
+							<td><input data-bind="value: name" /></td>
+							<td><input data-bind="value: genre" /></td>
+							<td><button data-bind="click: $parent.remove">X</button>
+						</tr>
+					</tbody>
+				</table>
+				<button data-bind="click: add">Add</button>
+			</div>
+			<div>
+				<ul>
+					<li><h3>My favourite albums list!</h3></li>
+					<!-- ko foreach: albums -->
+						<li><span data-bind="text: name"></li>
+					<!-- /ko -->
+				</ul>
+			</div>
+		</div>
+		
+		<script src="knockout-3.3.0.js"></script>
+		<script src="ArraysAndForeach.js"></script>
+	</body>
+</html>

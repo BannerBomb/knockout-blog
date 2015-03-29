@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Knockout example</title>
+	</head>
+	<body>
+		<div>
+			<h1>Contact</h1>
+			<p>First name: <input data-bind="value: firstName" /></p>
+			<p>Last name: <input data-bind="value: lastName" /></p>
+			<p>Email: <input type="email" data-bind="value: email" /></p>
+			<p>Subject: <input data-bind="value: subject" /></p>
+			<p>Your question: <textarea rows="5" data-bind="value: content"></textarea></p>
+			<p><button data-bind="click: submit">Submit</button></p>
+		</div>
+		
+		<script src="knockout-3.3.0.js"></script>
+		<script src="ContactForm.js"></script>
+	</body>
+</html>

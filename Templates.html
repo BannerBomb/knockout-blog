@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Knockout example</title>
+	</head>
+	<body>
+		<div>
+			<h1>My favourite albums</h1>
+			<div data-bind="foreach: albums">
+				<div data-bind="template: { name: 'album-template', data: $data}"></div>
+			</div>
+		</div>
+		
+		<script type="text/html" id="album-template">
+			<h2 data-bind="text: name"></h2>
+			<p>Artist: <span data-bind="text: artist"></span><br>
+			Genre: <span data-bind="text: genre"><span></p>
+		</script>
+		<script src="knockout-3.3.0.js"></script>
+		<script src="ArraysAndForeach.js"></script>
+	</body>
+</html>
